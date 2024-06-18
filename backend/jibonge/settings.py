@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # Third party
     "rest_framework",
     'rest_framework_simplejwt',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,8 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+
 }
 
 ROOT_URLCONF = 'jibonge.urls'

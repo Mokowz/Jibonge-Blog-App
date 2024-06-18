@@ -11,11 +11,11 @@ from .views import (
 
 urlpatterns = [
   path('blogs/', BlogList.as_view(), name='blog-list'),
-  path('blogs/<int:id>/', BlogDetail.as_view(), name='blog-detail'),
+  path('blogs/<int:pk>/', BlogDetail.as_view(), name='blog-detail'),
 
   path('authors/', AuthorList.as_view(), name='author-list'),
-  path('authors/<int:id>/', AuthorDetail.as_view(), name='author-detail'),
+  path('authors/<int:pk>/', AuthorDetail.as_view(), name='author-detail'),
 
   path('tags/', TagList.as_view(), name='tag-list'),
-  path('tags/<int:id>/', TagDetail.as_view(), name='tag-detail'),
+  path('tags/<int:pk>/', TagDetail.as_view(), name='tag-detail'),
 ]
