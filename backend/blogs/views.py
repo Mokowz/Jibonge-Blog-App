@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 from .models import Author, Blog, Tag
 from .serializers import AuthorSerializer, BlogSerializer, TagSerializer
@@ -9,6 +11,10 @@ class BlogList(generics.ListCreateAPIView):
   # permission_classes = [permissions.IsAuthenticated]
   queryset = Blog.objects.all()
   serializer_class = BlogSerializer
+  filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+  search_fields = ['title', 'content', 'author__user__first_name', 'author__user__first_name', 'tags__name']
+  filterset_fields = ['author', 'tags']
+
 
 class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
   # permission_classes = [permissions.IsAuthenticated]
