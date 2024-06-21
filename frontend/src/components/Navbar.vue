@@ -6,7 +6,6 @@
 
        <!-- Nav Menu  -->
       <div class="text-lg/3  flex items-center">
-        <router-link to="/" class="mr-6 hover:underline">Home</router-link>
         <router-link to="/" class="mr-6 hover:underline">Blogs</router-link>
         <router-link to="/" class="mr-6 hover:underline">Authors</router-link>
         <router-link to="/" class="mr-6 hover:underline">Tags</router-link>
