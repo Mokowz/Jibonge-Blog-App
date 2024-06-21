@@ -13,7 +13,7 @@
 
         <!-- Sign Up page / Login Page -->
         <router-link to="/signup" class="mr-6 hover:underline">Sign Up</router-link>
-        <router-link to="/signup" class="mr-6 hover:underline">Log In</router-link>
+        <router-link to="/login" class="mr-6 hover:underline">Log In</router-link>
       </div>
 
     </div>
