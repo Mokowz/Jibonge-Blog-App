@@ -7,7 +7,9 @@
     <!-- Content Side -->
     <div class="flex flex-col">
       <h1 class="text-2xl font-bold">{{ blog.title }}</h1>
-      
+      <div  class="flex flex-row space-x-2 uppercase">
+        <h4 v-for="tag in blog.tags" :key="tag" class="text-yellow-500">{{ tag }}</h4>
+      </div>
       <p class="text-dadrkGrey">{{ blog.content }}</p>
 
       <router-link to="/login" class="text-yellow-500 my-5 text-lg">Read More >> </router-link>
