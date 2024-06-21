@@ -1,6 +1,6 @@
 <template>
   <div class="flex container mx-auto space-x-8">
-    <div v-for="tag in tags" :key="tag" class="border border-darkGrey px-6 py-3 rounded-md cursor-pointer">
+    <div v-for="tag in tags" :key="tag" class="border border-darkGrey px-8 py-3 rounded-sm cursor-pointer">
       <span>{{ tag }}</span>
     </div>
   </div>
