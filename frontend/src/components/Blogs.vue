@@ -18,30 +18,41 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      blogs: [
-        {
-          id: 1,
-          title: 'Blog 1',
-          content: "Asake's journey is one of inspiration and determination. Born in a small African village, she faced challenges with resilience and unwavering spirit. Despite limited resources and societal constraints, Asake remained steadfast in her pursuit of education. Through hard work and perseverance, she defied the odds and earned a scholarship to study abroad. Today, Asake stands as a beacon of hope, empowering others with her story of triumph over adversity. Her unwavering determination serves as a reminder that with passion and purpose, one can overcome any obstacle. Asake's journey inspires us to embrace our own potential and strive for greatness, no matter the circumstances.",
-          author: 'Author 1',
-          tags: ['tag1', 'tag2'],
-          date: '2021-09-01',
-        },
-        {
-          id: 2,
-          title: 'Blog 2',
-          content: 'Content nada',
-          author: 'Author 2',
-          tags: ['tag1', 'tag2'],
-          date: '2021-09-01',
-        },
+    //   blogs: [
+    //     {
+    //       id: 1,
+    //       title: 'Blog 1',
+    //       content: "Asake's journey is one of inspiration and determination. Born in a small African village, she faced challenges with resilience and unwavering spirit. Despite limited resources and societal constraints, Asake remained steadfast in her pursuit of education. Through hard work and perseverance, she defied the odds and earned a scholarship to study abroad. Today, Asake stands as a beacon of hope, empowering others with her story of triumph over adversity. Her unwavering determination serves as a reminder that with passion and purpose, one can overcome any obstacle. Asake's journey inspires us to embrace our own potential and strive for greatness, no matter the circumstances.",
+    //       author: 'Author 1',
+    //       tags: ['tag1', 'tag2'],
+    //       date: '2021-09-01',
+    //     },
+    //     {
+    //       id: 2,
+    //       title: 'Blog 2',
+    //       content: 'Content nada',
+    //       author: 'Author 2',
+    //       tags: ['tag1', 'tag2'],
+    //       date: '2021-09-01',
+    //     },
 
-      ]
+    //   ]
+    blogs: []
+
     }
-  }
+  },
+
+  mounted() {
+    axios.get('http://192.168.46.232:80/api/v1/blogs/')
+    .then((response) => {
+      this.blogs = response.data;
+    })
+  },
 }
 </script>
 
