@@ -1,7 +1,7 @@
 <template>
   <div class="flex w-full justify-between py-6 px-16 border-b border-darkGrey" v-for="blog in blogs" :key="blog.id">
     <!-- Date side -->
-     <span class="text-darkGrey">{{ blog.date }}</span>
+     <span class="text-darkGrey">{{ blog.created_at }}</span>
 
 
     <!-- Content Side -->
@@ -47,7 +47,7 @@ export default {
     }
   },
 
-  mounted() {
+  beforeMount() {
     axios.get('http://192.168.46.232:80/api/v1/blogs/')
     .then((response) => {
       this.blogs = response.data;
