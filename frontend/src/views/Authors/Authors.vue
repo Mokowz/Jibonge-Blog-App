@@ -1,7 +1,7 @@
 <template>
   <div class="flex container mx-auto">
     <div v-for="author in authors" :key="author">
-        <span  class="mr-6 px-6 py-3 border rounded-sm border-darkGrey">{{ author.bio }}</span>
+        <router-link :to="{name: 'authorBlogs', params: {id: author.id}}"  class="mr-6 px-6 py-3 border rounded-sm border-darkGrey">{{ author.bio }}</router-link>
     </div>
   </div>
 </template>
