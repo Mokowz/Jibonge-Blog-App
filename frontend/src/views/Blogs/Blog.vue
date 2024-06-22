@@ -16,7 +16,7 @@
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-xl text-yellow-500 mb-2">Tags</h1>
-          <span v-for="tag in blog.tags" :key="tag" class="mr-3">{{ tag }}</span>
+          <span v-for="tag in blog.tags" :key="tag" class="mr-3">{{ tag.name }}</span>
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <router-link to="/blogs" class="text-yellow-500"> << Back to Blogs</router-link>

@@ -1,7 +1,7 @@
 <template>
   <div class="flex container mx-auto space-x-8">
     <div v-for="tag in tags" :key="tag" class="border border-darkGrey px-8 py-3 rounded-sm cursor-pointer">
-      <span>{{ tag.name }}</span>
+      <router-link :to="{name:'tagList', params: {id: tag.id}}">{{ tag.name }}</router-link>
     </div>
   </div>
 </template>
