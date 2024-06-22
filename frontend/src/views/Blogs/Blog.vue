@@ -16,7 +16,7 @@
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-xl text-yellow-500 mb-2">Tags</h1>
-          <span v-for="tag in blog.tags" :key="tag" class="mr-3">{{ tag }}</span>
+          <span v-for="tag in blog.tags" :key="tag" class="mr-3">{{ tag.name }}</span>
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <router-link to="/blogs" class="text-yellow-500"> << Back to Blogs</router-link>
@@ -33,17 +33,33 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  }
+  ,
+
   data() {
     return {
-      blog: {
-        id: 1,
-        title: 'Blog 1',
-        content: "Asake's journey is one of inspiration and determination. Born in a small African village, she faced challenges with resilience and unwavering spirit. Despite limited resources and societal constraints, Asake remained steadfast in her pursuit of education. Through hard work and perseverance, she defied the odds and earned a scholarship to study abroad. Today, Asake stands as a beacon of hope, empowering others with her story of triumph over adversity. Her unwavering determination serves as a reminder that with passion and purpose, one can overcome any obstacle. Asake's journey inspires us to embrace our own potential and strive for greatness, no matter the circumstances.",
-        author: 'Author 1',
-        tags: ['tag1', 'tag2'],
-        date: '2021-09-01',
-      }
+      blog: []
+    }
+  },
+
+  created() {
+    this.fetchBlog()
+  },
+
+  methods: { 
+    async fetchBlog() {
+      const response = await axios.get(`http://54.144.151.102/api/v1/blogs/${this.$route.params.id}/`)
+                      .then((response) => {
+                        this.blog = response.data;
+                      })
     }
   }
 }

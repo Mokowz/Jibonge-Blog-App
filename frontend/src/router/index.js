@@ -23,7 +23,7 @@ const routes = [
     component: () => import('../views/Blogs/Blogs.vue')
   },
   {
-    path: '/blog/1',
+    path: '/blog/:id',
     name: 'blog',
     component: () => import('../views/Blogs/Blog.vue')
   },
@@ -33,9 +33,19 @@ const routes = [
     component: () => import('../views/Tags/Tags.vue')
   },
   {
+    path: '/tags/:id',
+    name: 'tagList',
+    component: () => import('../views/Tags/TagBlogs.vue')
+  },
+  {
     path: '/authors',
     name: 'authors',
     component: () => import('../views/Authors/Authors.vue')
+  },
+  {
+    path: '/authors/:id',
+    name: 'authorBlogs',
+    component: () => import('../views/Authors/AuthorBlogs.vue')
   }
 ]
 
