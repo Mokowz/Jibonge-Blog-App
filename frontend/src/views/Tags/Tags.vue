@@ -16,12 +16,19 @@ export default {
     }
   },
 
-  beforeMount() {
-    axios.get('http://54.144.151.102/api/v1/tags/')
-    .then((response) => {
-      this.tags = response.data;
-    })
+  created() {
+    this.fetchTags()
   },
+
+  methods: {
+    async fetchTags() {
+      const response = await axios.get('http://54.144.151.102/api/v1/tags/')
+                      .then((response) => {
+                        this.tags = response.data;
+                      }
+      )
+    }
+  }, 
 }
 </script>
 
