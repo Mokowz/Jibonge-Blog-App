@@ -25,7 +25,7 @@ export default {
 
   methods: {
     async signup() {
-      const response = axios.post('http://192.168.46.232/api/v1/register/', {
+      const response = axios.post('http://54.144.151.102/api/v1/register/', {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
@@ -37,10 +37,6 @@ export default {
         this.$router.push('/login')
       }
     }
-  }
-
-  beforeMount() {
-    
   }
 }
 </script>
