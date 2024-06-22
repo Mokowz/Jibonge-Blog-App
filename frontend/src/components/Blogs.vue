@@ -48,7 +48,7 @@ export default {
   },
 
   beforeMount() {
-    axios.get('http://192.168.46.232:80/api/v1/blogs/')
+    axios.get('http://54.144.151.102/api/v1/blogs/')
     .then((response) => {
       this.blogs = response.data;
     })
