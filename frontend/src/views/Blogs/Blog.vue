@@ -34,6 +34,7 @@
 
 <script>
 import axios from 'axios';
+import { apiBaseUrl } from '@/config';
 
 export default {
   props: {
@@ -56,7 +57,7 @@ export default {
 
   methods: { 
     async fetchBlog() {
-      const response = await axios.get(`http://54.144.151.102/api/v1/blogs/${this.$route.params.id}/`)
+      const response = await axios.get(`${apiBaseUrl}blogs/${this.$route.params.id}/`)
                       .then((response) => {
                         this.blog = response.data;
                       })

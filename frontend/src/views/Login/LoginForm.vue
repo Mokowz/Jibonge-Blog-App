@@ -8,6 +8,7 @@
 
 <script>
 import axios from 'axios';
+import { apiBaseUrl } from '@/config';
 
 export default {
   data() {
@@ -20,7 +21,7 @@ export default {
 
   methods: {
     async login() {
-      const response = await axios.post('http://54.144.151.102/api/v1/token/', {
+      const response = await axios.post(`${apiBaseUrl}token/`, {
           email: this.email,
           password: this.password
       })
