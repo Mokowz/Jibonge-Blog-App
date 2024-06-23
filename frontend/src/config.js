@@ -1,0 +1,1 @@
+export const apiBaseUrl = "https://107.23.137.135/api/v1/"

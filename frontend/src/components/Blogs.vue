@@ -8,7 +8,7 @@
     <div class="flex flex-col w-3/6">
       <h1 class="text-2xl font-bold">{{ blog.title }}</h1>
       <div  class="flex flex-row space-x-2 uppercase">
-        <h4 v-for="tag in blog.tags" :key="tag" class="text-yellow-500">{{ tag }}</h4>
+        <h4 v-for="tag in blog.tags" :key="tag" class="text-yellow-500">{{ tag.name }}</h4>
       </div>
       <p class="text-darkGrey my-2">{{ blog.content.slice(0,200) }}...</p>
 
@@ -19,6 +19,7 @@
 
 <script>
 import axios from 'axios';
+import { apiBaseUrl } from '../config';
 
 export default {
   data() {
@@ -30,7 +31,7 @@ export default {
 
   methods: {
     async fetchBlogs() {
-      const response = await axios.get('http://54.144.151.102/api/v1/blogs/')
+      const response = await axios.get(`${apiBaseUrl}blogs/`)
         .then((response) => {
           this.blogs = response.data;
       })

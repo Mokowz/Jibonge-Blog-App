@@ -11,6 +11,7 @@
 
 <script>
 import axios from 'axios';
+import { apiBaseUrl } from '../../config';
 
 export default {
   data() {
@@ -25,7 +26,7 @@ export default {
 
   methods: {
     async signup() {
-      const response = axios.post('http://54.144.151.102/api/v1/register/', {
+      const response = axios.post(`${apiBaseUrl}register/`, {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
