@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col container mx-auto mt-20">
+  <div class="flex flex-col px-4 container mx-auto mt-20">
     <!-- Header -->
      <div class="border-b pb-5 border-darkGrey">
-      <h1 class="text-5xl font-bold mb-5">Karibu Jibonge, a one-stop <h1 class="text-yellow-500">magazine</h1> 
+      <h1 class="text-4xl md:text-5xl font-bold mb-5">Karibu Jibonge, a one-stop <h1 class="text-yellow-500">magazine</h1> 
         for all you Swahili and sheng lovers</h1>
 
       <p class="text-darkGrey">Jibonge offers a vibrant space where Swahili and Sheng aficionados can delve into
@@ -16,7 +16,7 @@
      <!-- Posts -->
       <Blogs />
 
-      <router-link to="/login" class="text-yellow-500 my-5 text-lg">All Posts >></router-link>
+      <router-link to="/blogs" class="text-yellow-500 my-5 text-lg">All Posts >></router-link>
 
   </div>
 </template>

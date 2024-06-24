@@ -1,11 +1,11 @@
 <template>
   <nav class="w-full  text-white mb-5">
-    <div class="flex container mx-auto items-center px-3 py-5 flex-row justify-between">
+    <div class="flex container mx-auto items-center px-4 md:px-3 py-5 flex-row justify-between">
       <!-- Logo -->
       <router-link to="/" class="text-3xl font-riot font-bold">Ji<span class="font-riot text-yellow-500">Bonge</span></router-link>
 
        <!-- Nav Menu  -->
-      <div class="text-lg/3  flex items-center">
+      <div class="text-lg/3 hidden  md:flex items-center">
         <router-link to="/blogs" class="mr-6 hover:underline">Blogs</router-link>
         <router-link to="/authors" class="mr-6 hover:underline">Authors</router-link>
         <router-link to="/tags" class="mr-6 hover:underline">Tags</router-link>
