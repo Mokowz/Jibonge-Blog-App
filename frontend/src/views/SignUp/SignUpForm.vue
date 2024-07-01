@@ -10,9 +10,27 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { apiBaseUrl } from '../../config';
+// import axios from 'axios';
+// import { apiBaseUrl } from '../../config';
+// const { ref } = Vue;
+// const name = ref('');
+// const email = ref('');
+// const password = ref('');
+// const password2 = ref('');
 
+// function signup() {
+//   axios.post(`${apiBaseUrl}register/`, {
+//     first_name: first_name.value,
+//     last_name: last_name.value,
+//     email: email.value,
+//     password: password.value,
+//     password2: password2.value
+//   }).then(response => {
+//     if (response.status === 201) {
+//       this.$router.push('/login')
+//     }
+//   })
+// }
 export default {
   data() {
     return {

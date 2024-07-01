@@ -1,7 +1,9 @@
 <template class="bg-slate-900">
-  <Navbar />
-  <router-view/>
-  <Footer />
+  <div>
+    <Navbar />
+    <router-view/>
+    <Footer />
+  </div>
 </template>
 
 <script>
