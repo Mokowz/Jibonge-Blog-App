@@ -30,8 +30,10 @@ export default {
 
 
       if (response.status === 200) {
-        const token = response.data.token
+        const token = response.data.access
+        console.log(`Token: ${token}`)
         const user = response.data.user
+        console.log(`User: ${user}`)
         this.setToken(token)
         this.setUser(user)
         this.loggedIn = true;

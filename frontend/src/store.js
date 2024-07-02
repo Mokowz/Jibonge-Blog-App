@@ -1,6 +1,7 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 import { useRoute } from 'vue-router';
+import { apiBaseUrl } from './config';
 
 
 const store = createStore({
@@ -38,8 +39,9 @@ const store = createStore({
       if (token) {
         commit('setToken', token)
 
-        axios.get('')
+        axios.get(`${apiBaseUrl}auth/me/`)
         .then(response => {
+          console.log(`Response: ${response.data}`)
           commit('setUser', response.data)
         })
         .catch(() => {

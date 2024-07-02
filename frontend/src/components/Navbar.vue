@@ -11,8 +11,10 @@
         <router-link to="/tags" class="mr-6 hover:underline">Tags</router-link>
 
         <!-- Sign Up page / Login Page -->
-        <router-link to="/signup" class="mr-6 hover:underline">Sign Up</router-link>
-        <router-link to="/login" class="mr-6 hover:underline">Log In</router-link>
+
+        <router-link v-if="!loggedIn" to="/signup" class="mr-6 hover:underline">Sign Up</router-link>
+        <router-link v-if="!loggedIn" to="/login" class="mr-6 hover:underline">Log In</router-link>
+        <button v-if="loggedIn" @click="logout" class="mr-6 hover:underline">Log Out</button>
       </div>
 
     </div>
@@ -20,7 +22,22 @@
 </template>
 
 <script>
+import LoginForm from '@/views/Login/LoginForm.vue';
+import { mapState, mapMutations } from 'vuex';
+
 export default {
+  computed: {
+    ...mapState(['loggedIn']),
+  },
+
+  methods: {
+    ...mapMutations(['clearAuth']),
+
+    logout() {
+      this.clearAuth()
+      this.$router.push('/login')
+    }
+  }
 
 }
 </script>
