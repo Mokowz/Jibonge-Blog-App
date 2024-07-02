@@ -26,7 +26,7 @@ export default {
 
   methods: {
     async signup() {
-      const response = axios.post(`${apiBaseUrl}register/`, {
+      const response = await axios.post(`${apiBaseUrl}register/`, {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
