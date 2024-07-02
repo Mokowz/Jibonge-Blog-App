@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios';
 import { apiBaseUrl } from '@/config';
+import { mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -20,13 +21,19 @@ export default {
   },
 
   methods: {
+    ...mapMutations(['setUser', 'setToken']),
     async login() {
       const response = await axios.post(`${apiBaseUrl}token/`, {
           email: this.email,
           password: this.password
       })
 
+
       if (response.status === 200) {
+        const token = response.data.token
+        const user = response.data.user
+        this.setToken(token)
+        this.setUser(user)
         this.loggedIn = true;
         this.$router.push('/')
       }
