@@ -16,7 +16,7 @@
         <div class="flex flex-col md:w-3/6">
           <h1 class="text-2xl font-bold">{{ blog.title }}</h1>
           <div  class="flex flex-row space-x-2 uppercase">
-            <h4 v-for="tag in blog.tags" :key="tag" class="text-yellow-500">{{ tag }}</h4>
+            <h4 v-for="tag in blog.tags" :key="tag" class="text-yellow-500">{{ tag.name }}</h4>
           </div>
           <p class="text-darkGrey my-2">{{ blog.content.slice(0,200) }}...</p>
 
