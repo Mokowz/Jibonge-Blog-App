@@ -14,7 +14,7 @@
      </div>
 
      <!-- Posts -->
-      <Blogs />
+      <Blogs :search="field" />
 
       <router-link to="/blogs" class="text-yellow-500 my-5 text-lg">All Posts >></router-link>
 
@@ -27,6 +27,12 @@ import Blogs from '@/components/Blogs.vue'
 export default {
   components: {
     Blogs,
+  },
+
+  data() {
+    return {
+      field: ''
+    }
   }
 }
 </script>
