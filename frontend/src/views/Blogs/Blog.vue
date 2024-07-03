@@ -13,7 +13,7 @@
         <!-- Author -->
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-yellow-500 text-xl mb-2">Author</h1>
-          <span>By {{ blog.author }}</span>
+          <span>By {{ blog.author.user.first_name }}</span>
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-xl text-yellow-500 mb-2">Tags</h1>
