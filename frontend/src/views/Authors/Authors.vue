@@ -1,7 +1,7 @@
 <template>
   <div class="flex container mx-auto px-4">
     <div v-for="author in authors" :key="author">
-        <router-link :to="{name: 'authorBlogs', params: {id: author.id}}"  class="mr-6 px-6 py-3 border rounded-sm border-darkGrey">{{ author.bio }}</router-link>
+        <router-link :to="{name: 'authorBlogs', params: {id: author.id}}"  class="mr-6 px-6 py-3 border rounded-sm border-darkGrey">{{ author.user }}</router-link>
     </div>
   </div>
 </template>
@@ -27,6 +27,10 @@ export default {
                       .then((response) => {
                         this.authors = response.data;
                       })
+      console.log(`Data: ${response}`)
+      for (let author in this.authors) {
+        console.log(`Author: ${author.bio}`)
+      }
     }
   }
 }
