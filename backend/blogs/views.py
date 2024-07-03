@@ -9,7 +9,7 @@ from .serializers import AuthorSerializer, BlogSerializer, TagSerializer
 
 # Create your views here.
 class BlogList(generics.ListCreateAPIView):
-  # permission_classes = [IsAuthenticated]
+  permission_classes = [IsAuthenticated]
   queryset = Blog.objects.all()
   serializer_class = BlogSerializer
   filter_backends = [filters.SearchFilter, DjangoFilterBackend]
