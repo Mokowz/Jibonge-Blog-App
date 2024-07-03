@@ -22,6 +22,7 @@ import axios from 'axios';
 import { apiBaseUrl } from '../config';
 
 export default {
+  props: ['search'],
   data() {
     return {
       blogs: []
@@ -31,10 +32,16 @@ export default {
 
   methods: {
     async fetchBlogs() {
-      const response = await axios.get(`${apiBaseUrl}blogs/`)
+      const response = await axios.get(`${apiBaseUrl}blogs/?search=${this.search}`)
         .then((response) => {
           this.blogs = response.data;
       })
+    }
+  },
+
+  watch: {
+    search(newValue, oldValue) {
+      this.fetchBlogs();
     }
   },
 
