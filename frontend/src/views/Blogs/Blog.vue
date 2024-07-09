@@ -13,14 +13,17 @@
         <!-- Author -->
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-yellow-500 text-xl mb-2">Author</h1>
-          <span v-if="blog.author && blog.author.user">By {{ blog.author.user.first_name }} {{ blog.author.user.last_name }}</span>
+          <span v-if="blog.author && blog.author.user">By {{ blog.author.user }} {{ blog.author.user.last_name }}</span>
         </div>
-        <div class="border-b border-darkGrey py-3 px-1">
+        <div class="border-b border-darkGrey py-3 px-1" v-if="blog.tags">
           <h1 class="font-bold text-xl text-yellow-500 mb-2">Tags</h1>
           <span v-for="tag in blog.tags" :key="tag" class="mr-3">{{ tag.name }}</span>
         </div>
         <div class="border-b border-darkGrey py-3 px-1">
           <router-link to="/blogs" class="text-yellow-500"> << Back to Blogs</router-link>
+        </div>
+        <div class="border-b border-darkGrey py-3 px-1">
+          <button @click="deleteBlog()" class="px-3 py-2 bg-yellow-500 font-semibold rounded-sm">Delete Blog</button>
         </div>
        </div>
 
@@ -62,6 +65,14 @@ export default {
                       .then((response) => {
                         this.blog = response.data;
                       })
+    },
+
+    async deleteBlog() {
+      const response = await axios.delete(`${apiBaseUrl}blogs/${this.$route.params.id}/`)
+
+      if (response.status == 204) {
+        this.$router.push('/')
+      }
     }
   }
 }
