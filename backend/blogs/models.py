@@ -26,7 +26,7 @@ class Blog(models.Model):
   title = models.CharField(max_length=200)
   author = models.ForeignKey(Author, on_delete=models.CASCADE)
   content = models.TextField()
-  tags = models.ManyToManyField(Tag)
+  tags = models.ManyToManyField(Tag, blank=True)
   created_at = models.DateField(auto_now_add=True)
 
   def __str__(self):
