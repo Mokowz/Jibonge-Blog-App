@@ -30,4 +30,22 @@ class BlogSerializer(serializers.ModelSerializer):
         model = Blog
         fields = ['id', 'title', 'content', 'author', 'tags', 'created_at']
         read_only_fields = ['author']
+
+    def create(self, validated_data):
+        tags_data = self.context['request'].data.get('tags')
+        blog = Blog.objects.create(**validated_data)
+        if tags_data:
+            tags = Tag.objects.filter(id__in=tags_data)
+            blog.tags.set(tags)
+        return blog
+
+    def update(self, instance, validated_data):
+        tags_data = self.context['request'].data.get('tags')
+        instance.title = validated_data.get('title', instance.title)
+        instance.content = validated_data.get('content', instance.content)
+        instance.save()
+        if tags_data:
+            tags = Tag.objects.filter(id__in=tags_data)
+            instance.tags.set(tags)
+        return instance
     
