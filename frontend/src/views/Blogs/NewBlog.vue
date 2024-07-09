@@ -8,7 +8,7 @@
           <div>
             <select v-model="newTags" multiple size="1" class="bg-darkGrey/10 rounded-md px-8 py-3">
               <option value="" disabled>Add a Tag</option>
-              <option :value="tag.id" v-for="tag in tags" :key="tag.name">{{ tag.id }}</option>
+              <option :value="tag.id" v-for="tag in tags" :key="tag.name">{{ tag.name }}</option>
             </select>
           </div>
        </div>
