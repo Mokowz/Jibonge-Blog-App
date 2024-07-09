@@ -52,8 +52,7 @@ export default {
       console.log(`Tags: ${this.newTags}`)
       const response = await axios.post(`${apiBaseUrl}blogs/`, {
         title: this.title,
-        // tags: this.newTags,
-        content: this.content,
+        content: this.content
       })
 
       if (response.status === 201) {
