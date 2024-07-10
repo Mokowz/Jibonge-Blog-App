@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import "./style.css"
 import store from '@/store'
+// main.js or main.ts
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const app = createApp(App)
 
