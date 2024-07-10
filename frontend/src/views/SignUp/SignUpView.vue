@@ -4,7 +4,7 @@
 
 
     <!-- Form Card -->
-     <div class="flex flex-col px-10 py-6 border border-darkGrey rounded-sm">
+     <div class="mx-10 md:mx-0 flex flex-col px-5 py-6 border border-darkGrey rounded-sm">
         <!-- Header -->
         <div class="text-center">
           <h1 class="text-yellow-500 font-semibold text-2xl">Sign Up</h1>
