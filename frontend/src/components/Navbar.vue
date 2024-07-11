@@ -5,7 +5,7 @@
       <router-link to="/" class="text-3xl font-riot font-bold">Ji<span class="font-riot text-yellow-500">Bonge</span></router-link>
 
        <!-- Nav Menu  -->
-      <div @click="changeShow()" class="text-lg/3 absolute w-full h-full top-20 pl-6  md:flex items-center duration-100 ease-in-out" :class="[show ? 'left-0' : 'left-[-100%]']">
+      <div @click="changeShow()" class="text-lg/3 absolute w-full h-full md:h-auto md:w-auto top-20 md:my-auto md:static pl-6  md:pl-0 md:flex md:items-center duration-100 ease-in-out" :class="[show ? 'left-0' : 'left-[-100%]']">
         <router-link to="/blogs" class="block mb-10 mr-6 hover:underline">Blogs</router-link>
         <router-link to="/authors" class="block mb-10 mr-6 hover:underline">Authors</router-link>
         
