@@ -19,7 +19,7 @@
       </div>
 
       <div class="md:hidden" @click="changeShow()">
-        <i :class="[show ? 'fa-close' : 'fa-bars']"  class="fas text-2xl font-light"></i>
+        <i :class="[show ? 'bi-x' : 'bi-list']"  class="bi text-4xl font-light"></i>
       </div>
 
     </div>
