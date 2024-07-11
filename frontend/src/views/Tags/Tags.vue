@@ -1,6 +1,6 @@
 <template>
-  <div class="flex container mx-auto space-x-8 px-4">
-    <div v-for="tag in tags" :key="tag" class="border border-darkGrey px-8 py-3 rounded-sm cursor-pointer">
+  <div class="md:flex container grid grid-cols-2 gap-4 md:flex-row md:items-start mx-auto md:space-x-8 px-4">
+    <div v-for="tag in tags" :key="tag" class="flex justify-center items-center border border-darkGrey px-8 py-3 rounded-sm cursor-pointer">
       <router-link :to="{name:'tagList', params: {id: tag.id}}">
         {{ tag.name }}
       </router-link>
