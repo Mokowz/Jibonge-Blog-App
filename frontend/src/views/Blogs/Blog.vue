@@ -9,11 +9,11 @@
      <div class="flex mt-6  justify-between flex-col-reverse md:flex-row">
 
       <!-- Side Profile -->
-       <div class="flex justify-between md:justify-normal space-y-0 space-x-5 md:flex-col md:space-x-0 md:space-y-4 md:w-1/5">
+       <div class="grid grid-cols-2 gap-5  md:flex justify-between md:justify-normal space-y-0 md:flex-col md:space-x-0 md:space-y-4 md:w-1/5">
         <!-- Author -->
         <div class="border-b border-darkGrey py-3 px-1">
           <h1 class="font-bold text-yellow-500 text-xl mb-2">Author</h1>
-          <span v-if="blog.author && blog.author.user">By {{ blog.author.user }} {{ blog.author.user.last_name }}</span>
+          <span v-if="blog.author && blog.author.user">By {{ blog.author.user.first_name }} {{ blog.author.user.last_name }}</span>
         </div>
         <div class="border-b border-darkGrey py-3 px-1" v-if="blog.tags">
           <h1 class="font-bold text-xl text-yellow-500 mb-2">Tags</h1>
