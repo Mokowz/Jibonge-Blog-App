@@ -4,7 +4,7 @@
 
 
     <!-- Form Card -->
-     <div class="flex flex-col px-5 py-6 border border-darkGrey rounded-sm">
+     <div class="flex flex-col px-3 py-4 md:px-10 md:py-6 border border-darkGrey rounded-sm">
         <!-- Header -->
         <div class="text-center">
           <h1 class="text-yellow-500 font-semibold text-2xl">Log In</h1>
