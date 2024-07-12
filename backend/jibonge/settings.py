@@ -61,6 +61,20 @@ REST_FRAMEWORK = {
 
 }
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://0.0.0.0:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "KEY_PREFIX": "jibonge"
+    }
+}
+
+# Cache time to live
+CACHE_TTL = 60 * 15
+
 ROOT_URLCONF = 'jibonge.urls'
 
 TEMPLATES = [
