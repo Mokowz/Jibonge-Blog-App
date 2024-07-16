@@ -15,7 +15,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup SSH
+        run: |
+          mkdir -p .ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > .ssh/id_rsa
+          chmod 600 .ssh/id_rsa
+
       - name: Deploy application
         run: |
-          scp -i ${{ secrets.SSH_KEY }} deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:~
-          ssh -i ${{ secrets.SSH_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} "./deploy.sh"
+          scp -i .ssh/id_rsa deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:~
+          ssh -i .ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} "./deploy.sh"
