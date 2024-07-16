@@ -1,0 +1,21 @@
+name: Deploy Application on AWS
+on:
+  push:
+    branches:
+      - master
+  pull-request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy application
+        run: |
+          scp -i ${{ secrets.SSH_KEY }} deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:~
+          ssh -i ${{ secrets.SSH_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} "./deploy.sh"
