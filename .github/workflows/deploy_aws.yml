@@ -11,6 +11,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -18,10 +22,10 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p .ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > .ssh/aws_key
+          echo "$SSH_PRIVATE_KEY" > .ssh/aws_key
           chmod 600 .ssh/aws_key
           echo "Created the directory"
-          echo "SSH key: ${{ secrets.SSH_PRIVATE_KEY }}"
+          echo "SSH key: $SSH_PRIVATE_KEY"
           echo "SSH File: $(cat .ssh/aws_key)"
 
       - name: Deploy application
