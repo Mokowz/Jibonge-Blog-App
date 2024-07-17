@@ -25,10 +25,8 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > .ssh/aws_key
           chmod 600 .ssh/aws_key
           echo "Created the directory"
-          echo "SSH key: ${{ secrets.SSH_KEY }}"
-          echo "SSH File: $(cat .ssh/aws_key)"
 
       - name: Deploy application
         run: |
-          scp -i .ssh/aws_key deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:~
-          ssh -i .ssh/aws_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}} "./deploy.sh"
+          scp -i ${{ secrets.SSH_KEY }} deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~
+          ssh -i ${{ secrets.SSH_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "./deploy.sh"
