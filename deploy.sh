@@ -10,6 +10,7 @@ cd Jibonge-Blog-App
 git pull origin main
 
 # Activate the virtualenv
+virtualvenv venv
 source venv/bin/activate
 
 # Install dependencies
