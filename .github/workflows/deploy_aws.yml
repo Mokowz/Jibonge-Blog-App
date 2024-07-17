@@ -28,5 +28,5 @@ jobs:
 
       - name: Deploy application
         run: |
-          scp -i ${{ secrets.SSH_KEY }} deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~
-          ssh -i ${{ secrets.SSH_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "./deploy.sh"
+          scp -i .ssh/aws_key deploy.sh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~
+          ssh -i .ssh/aws_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "./deploy.sh"
